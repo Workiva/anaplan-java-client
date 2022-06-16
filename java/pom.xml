@@ -16,7 +16,7 @@
         <compiler.plugin.version>3.8.0</compiler.plugin.version>
         <feign-jackson.version>10.0.0</feign-jackson.version>
         <github.global.server>github</github.global.server>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <logback.version>1.2.3</logback.version>
         <commons.codec.version>1.12</commons.codec.version>
         <commons.io.version>2.6</commons.io.version>

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.anaplan.client</groupId>
     <artifactId>anaplan-connect</artifactId>
-    <version>1.4.7</version>
+    <version>1.4.8</version>
     <name>Anaplan Connect</name>
 
     <properties>

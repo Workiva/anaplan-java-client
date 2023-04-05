@@ -17,7 +17,7 @@ public class Constants {
     public static final Integer AUTH_TTL_SECONDS = 30;
 
     public static final String X_ACONNECT_HEADER_KEY = "X-AConnect-Client";
-    public static final String X_ACONNECT_HEADER_VALUE = "Anaplan_Connect_1.4.4";
+    public static final String X_ACONNECT_HEADER_VALUE = "Workiva_Anaplan_Connect_v1.4.x";
     public static final String X_ACONNECT_HEADER = X_ACONNECT_HEADER_KEY + ":" + X_ACONNECT_HEADER_VALUE;
 
     public static final String CORS_HEADER_KEY = "Origin";

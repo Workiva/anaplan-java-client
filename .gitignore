@@ -1,5 +1,6 @@
 target
 .idea/
+.vscode/
 anaplan-connect.iml
 
 *.cer

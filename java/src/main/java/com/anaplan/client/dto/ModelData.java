@@ -13,7 +13,7 @@ public class ModelData extends NamedObjectData {
     private String currentWorkspaceId;
     private String currentWorkspaceName;
     private String modelUrl;
-    private String[] categoryValues;
+    private Object[] categoryValues;
     public Long lastSavedSerialNumber;
     public String lastModifiedByUserGuid;
     public Long memoryUsage;
@@ -79,11 +79,11 @@ public class ModelData extends NamedObjectData {
         this.modelUrl = modelUrl;
     }
 
-    public String[] getCategoryValues() {
+    public Object[] getCategoryValues() {
         return categoryValues;
     }
 
-    public void setCategoryValues(String[] categoryValues) {
+    public void setCategoryValues(Object[] categoryValues) {
         this.categoryValues = categoryValues;
     }
 
@@ -135,7 +135,7 @@ public class ModelData extends NamedObjectData {
         ModelData data = (ModelData) other;
         return id.equals(data.id);
     }
-    
+
     @Override
     public int hashCode() {
         return id.hashCode();

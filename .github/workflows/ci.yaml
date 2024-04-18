@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: anaplan-java-client
-          path: ./build/target/anaplan-java-client-*.*.jar
+          path: ./java/target/anaplan-java-client-*.*.jar
 
   Unit-Test:
     runs-on: ubuntu-latest

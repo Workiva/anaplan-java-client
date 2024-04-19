@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: anaplan-java-client
-          path: ./java/target/anaplan-java-client-*.*.jar
+          path: ./java/target/anaplan-connect-*.*.jar
 
   Unit-Test:
     runs-on: ubuntu-latest
@@ -44,8 +44,6 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: '8'
-      - uses: gradle/actions/setup-gradle@v3
-
       - name: Run Tests
         run: |
           cd java && mvn test

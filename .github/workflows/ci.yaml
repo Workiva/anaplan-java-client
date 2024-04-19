@@ -41,7 +41,7 @@ jobs:
       - name: Publish JavaDoc Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: anaplan-java-client
+          name: anaplan-java-client-javadoc
           path: ./java/target/anaplan-connect-*.*-javadoc.jar
 
   Unit-Test:

@@ -1,4 +1,4 @@
-name: flip-tables CI
+name: anaplan-java-client CI
 
 on:
   pull_request:
@@ -34,7 +34,15 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: anaplan-java-client
-          path: ./java/target/anaplan-connect-*.*.jar
+          path: |
+            ./java/target/anaplan-connect-*.*.jar
+            !./java/target/*-javadoc.jar
+
+      - name: Publish JavaDoc Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: anaplan-java-client
+          path: ./java/target/anaplan-connect-*.*-javadoc.jar
 
   Unit-Test:
     runs-on: ubuntu-latest

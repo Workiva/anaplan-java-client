@@ -1,0 +1,57 @@
+name: anaplan-java-client CI
+
+on:
+  pull_request:
+    branches: [ '*' ]
+  push:
+    branches: [ 'master' ]
+    tags: [ '*' ]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  build-jar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'corretto'
+          java-version: '8'
+
+      - name: Set Release Version
+        if: ${{ github.ref_type == 'tag' }}
+        run: mvn versions:set -DnewVersion=${{ github.ref_name }}
+        working-directory: java
+
+      - name: Maven Build
+        run: mvn package -Dmaven.test.skip
+        working-directory: java
+
+      - name: Publish Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: anaplan-java-client
+          path: |
+            ./java/target/anaplan-connect-*.*.jar
+            !./java/target/*-javadoc.jar
+
+      - name: Publish JavaDoc Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: anaplan-java-client-javadoc
+          path: ./java/target/anaplan-connect-*.*-javadoc.jar
+
+  Unit-Test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'corretto'
+          java-version: '8'
+      - name: Run Tests
+        run: |
+          cd java && mvn test

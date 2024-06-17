@@ -7,11 +7,19 @@ import java.util.Objects;
  * Created by Spondon Saha User: spondonsaha Date: 6/21/17 Time: 3:28 PM
  */
 public class ModelData implements Serializable {
-
     private String id;
     private String name;
+    private String activeState;
     private String currentWorkspaceId;
+    private String currentWorkspaceName;
+    private String isoCreationDate;
+    private String lastModified;
+    private String lastModifiedByUserGuid;
+    private String lastSavedSerialNumber;
     private long memoryUsage;
+    private String modelUrl;
+    private boolean modelTransactionRunning;
+    private CategoryValueData[] categoryValues;
 
     /**
      * Default constructor.
@@ -67,9 +75,45 @@ public class ModelData implements Serializable {
         return memoryUsage;
     }
 
-    public void setMemoryUsage(long memoryUsage) {
-        this.memoryUsage = memoryUsage;
-    }
+    public void setMemoryUsage(long memoryUsage) { this.memoryUsage = memoryUsage; }
+
+    public String getActiveState() { return activeState; }
+
+    public void setActiveState(String activeState) { this.activeState = activeState; }
+
+    public void setCurrentWorkspaceId(String currentWorkspaceId) { this.currentWorkspaceId = currentWorkspaceId; }
+
+    public String getCurrentWorkspaceName() { return currentWorkspaceName; }
+
+    public void setCurrentWorkspaceName(String currentWorkspaceName) { this.currentWorkspaceName = currentWorkspaceName; }
+
+    public String getModelUrl() { return modelUrl; }
+
+    public void setModelUrl(String modelUrl) { this.modelUrl = modelUrl; }
+
+    public CategoryValueData[] getCategoryValues() { return categoryValues; }
+
+    public void setCategoryValues(CategoryValueData[] categoryValues) { this.categoryValues = categoryValues; }
+
+    public String getIsoCreationDate() { return isoCreationDate; }
+
+    public void setIsoCreationDate(String isCreationDate) { this.isoCreationDate = isCreationDate; }
+
+    public String getLastModified() { return lastModified; }
+
+    public void setLastModified(String lastModified) { this.lastModified = lastModified;}
+
+    public String getLastModifiedByUserGuid() { return lastModifiedByUserGuid; }
+
+    public void setLastModifiedByUserGuid(String lastModifiedByUserGuid) { this.lastModifiedByUserGuid = lastModifiedByUserGuid; }
+
+    public String getLastSavedSerialNumber() { return lastSavedSerialNumber; }
+
+    public void setLastSavedSerialNumber(String lastSavedSerialNumber) { this.lastSavedSerialNumber = lastSavedSerialNumber; }
+
+    public boolean isModelTransactionRunning() { return modelTransactionRunning; }
+
+    public void setModelTransactionRunning(boolean modelTransactionRunning) { this.modelTransactionRunning = modelTransactionRunning; }
 
     @Override
     public boolean equals(Object o) {

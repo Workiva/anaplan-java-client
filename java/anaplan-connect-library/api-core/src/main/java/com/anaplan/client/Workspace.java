@@ -37,7 +37,7 @@ public class Workspace extends AnaplanApiClientObject {
   private Map<ModelData, Reference<Model>> modelCache = new WeakHashMap<>();
 
   // Package access: should only be instantiated by Service class.
-  Workspace(Service service, WorkspaceData data) {
+  public Workspace(Service service, WorkspaceData data) {
     super(service);
     this.data = data;
   }
@@ -74,6 +74,12 @@ public class Workspace extends AnaplanApiClientObject {
    */
   public Long getSizeAllowance () { return data.getSizeAllowance(); }
 
+  /**
+   * Get whether a workspace is active or not.
+   *
+   * @return `true` if a workspace is active. Otherwise, `false`.
+   */
+  public boolean isActive () { return data.isActive(); }
 
   /**
    * Retrieve the list of available models.

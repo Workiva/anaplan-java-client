@@ -13,6 +13,7 @@
 
 package com.anaplan.client;
 
+import com.anaplan.client.dto.CategoryValueData;
 import com.anaplan.client.dto.ModelData;
 import com.anaplan.client.dto.ServerFileData;
 import com.anaplan.client.dto.responses.ActionsResponse;
@@ -40,7 +41,7 @@ public class Model extends AnaplanApiClientObject {
   private final Workspace workspace;
   private final ModelData data;
 
-  Model(Workspace workspace, ModelData data) {
+  public Model(Workspace workspace, ModelData data) {
     super(workspace.getService());
     this.workspace = workspace;
     this.data = data;
@@ -93,6 +94,30 @@ public class Model extends AnaplanApiClientObject {
    * @return memory usage (represents total bytes.)
    */
   public Long getMemoryUsage() { return data.getMemoryUsage() ; }
+
+
+  /**
+   * Get active state of the model.
+   *
+   * @return
+   */
+  public String getActiveState() { return data.getActiveState(); }
+
+  public String getCurrentWorkspaceName() { return data.getCurrentWorkspaceName(); }
+
+  public String getModelUrl() { return data.getModelUrl(); }
+
+  public CategoryValueData[] getCategoryValues() { return data.getCategoryValues(); }
+
+  public String getIsoCreationDate() { return data.getIsoCreationDate(); }
+
+  public String getLastModified() { return data.getLastModified(); }
+
+  public String getLastModifiedByUserGuid() { return data.getLastModifiedByUserGuid(); }
+
+  public String getLastSavedSerialNumber() { return data.getLastSavedSerialNumber(); }
+
+  public boolean isModelTransactionRunning() { return data.isModelTransactionRunning(); }
 
   /**
    * Retrieve the list of available modules.

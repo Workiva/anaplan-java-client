@@ -208,23 +208,19 @@
   </build>
   <repositories>
     <repository>
-      <id>anaplan-snapshots</id>
-      <name>Anaplan Public Releases</name>
-      <url>https://artifacts.anaplan-np.net/artifactory/AnaplanConnect/</url>
+      <id>workiva-release</id>
+      <name>workiva-release</name>
+      <url>https://workivaeast.jfrog.io/workivaeast/maven-prod</url>
     </repository>
     <repository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>central</id>
-      <name>anaplan</name>
-      <url>https://artifacts.anaplan-np.net/artifactory/anaplan</url>
+      <id>workiva-release-backup</id>
+      <name>workiva-release-backup</name>
+      <url>https://workivaeast.jfrog.io/workivawest/maven-prod</url>
     </repository>
     <repository>
-      <snapshots/>
-      <id>snapshots</id>
-      <name>mirror</name>
-      <url>https://artifacts.anaplan-np.net/artifactory/mirror</url>
+      <id>maven-central</id>
+      <name>maven-central</name>
+      <url>https://repo1.maven.org/maven2/</url>
     </repository>
   </repositories>
 

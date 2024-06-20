@@ -127,7 +127,8 @@ public final class Credentials {
     public String getPassPhrase() {
 return passPhrase;
     }
-        public String getAccessToken() {
+
+    public String getAccessToken() {
             return accessToken;
         }
 

@@ -124,6 +124,7 @@ public final class Credentials {
         return domain;
     }
 
+    // Comment
     /**
      * Get the workstation name. This is only used when accessing the service
      * through a proxy using the NTLM scheme.

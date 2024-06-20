@@ -125,12 +125,12 @@ public final class Credentials {
      * Get the passPhrase.
      */
     public String getPassPhrase() {
-return passPhrase;
+        return passPhrase;
     }
 
     public String getAccessToken() {
-            return accessToken;
-        }
+        return accessToken;
+    }
 
     /**
      * Get the domain. This is only used when accessing the service through a

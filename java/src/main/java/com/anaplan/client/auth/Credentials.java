@@ -27,7 +27,8 @@ public final class Credentials {
     public enum Scheme {
         BASIC,
         NTLM,
-        CA_CERTIFICATE
+        CA_CERTIFICATE,
+        ACCESS_TOKEN
     }
 
     private Scheme scheme;
@@ -36,6 +37,8 @@ public final class Credentials {
     private String passPhrase;
     private String domain;
     private String workstation;
+
+    private String accessToken;
 
     private X509Certificate certificate;
     private RSAPrivateKey privateKey;
@@ -53,6 +56,17 @@ public final class Credentials {
         this.domain = workstation = null;
         this.certificate = null;
         this.scheme = Scheme.BASIC;
+    }
+
+    /**
+     * Use pre-authed access token for authentication method. Obtained through
+     * <a href="https://anaplanoauth2service.docs.apiary.io/#reference/overview-of-the-authorization-code-grant">this method.</a>
+     *
+     * @param accessToken   The access token from the auth code Oauth2 handshake.
+     */
+    public Credentials(String accessToken) {
+        this.accessToken = accessToken;
+        this.scheme = Scheme.ACCESS_TOKEN;
     }
 
     /**
@@ -112,6 +126,10 @@ public final class Credentials {
      */
     public String getPassPhrase() {
         return passPhrase;
+    }
+
+    public String getAccessToken() {
+        return accessToken;
     }
 
     /**

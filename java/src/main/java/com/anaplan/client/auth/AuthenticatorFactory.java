@@ -17,6 +17,8 @@ public class AuthenticatorFactory {
                 return new BasicAuthenticator(properties);
             case CA_CERTIFICATE:
                 return new CertificateAuthenticator(properties);
+            case ACCESS_TOKEN:
+                return new AccessTokenAuthenticator(properties);
             default:
                 throw new RuntimeException("Unknown authentication scheme: " + properties.getApiCredentials().getScheme());
         }

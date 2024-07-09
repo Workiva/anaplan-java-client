@@ -1,3 +1,19 @@
+# NOTICE: THIS REPO IS NO LONGER MAINTAINED
+The Workiva fork of the `anaplan-java-client` repository is no longer maintained and will be "archived" moving forward.
+No updates, bug fixes, pull requests, or issues will be applied or accepted.
+While this repository remains public for now, we make no guarantees about its availability in the future.
+
+If you are in need of an Anaplan Java client, you can find the officially supported Anaplan Java client repository
+here: https://github.com/anaplaninc/anaplan-java-client
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 # anaplan-java-client
 
 ## DOCUMENTATION
